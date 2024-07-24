@@ -15,28 +15,12 @@ class ProfileController extends Controller
 {
     public function issue(Request $request)
     {
-        return Inertia::render('Welcome', [
-            'data' => function () use ($request) {
-                $data = match ($request->input('case')) {
-                    '1' => [
-                        'a' => 1,
-                        'b' => 2,
-                        'c' => 3,
-                        'd' => 4,
-                    ],
-                    '2' => [
-                        'a' => 10,
-                    ],
-                    '3' => [
-                        'b' => 40,
-                    ],
-                    default => []
-                };
+        return Inertia::render('Welcome');
+    }
 
-
-                return $data;
-            }
-        ]);
+    public function default(Request $request)
+    {
+        return view('welcome');
     }
 
     /**

@@ -5,7 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [ProfileController::class, 'issue'])->name('profile.issue');
+Route::get('/', [ProfileController::class, 'issue'])->name('profile.index');
+Route::get('/vue', [ProfileController::class, 'issue'])->name('profile.issue');
+Route::get('/default', [ProfileController::class, 'default'])->name('profile.default');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
